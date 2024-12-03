@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Report Phishing | Scam Protect</title>
+    <title>Report Other Scam | Scam Protect</title>
     <style>
         /* Similar to scam.html, reusing styling */
         * {
@@ -64,7 +64,7 @@
             width: 100%;
             padding: 15px;
             font-size: 1.2em;
-            background-color: #007bff;
+            background-color: #17a2b8;
             color: #fff;
             border: none;
             border-radius: 8px;
@@ -73,7 +73,7 @@
         }
 
         button:hover {
-            background-color: #0056b3;
+            background-color: #138496;
         }
 
         .back-button {
@@ -93,7 +93,7 @@
 <body>
 
     <div class="form-container">
-        <h1>Report Phishing</h1>
+        <h1>Report Other Scam</h1>
         <form method="POST">
             <label for="name">Your Name</label>
             <input type="text" name="name" required placeholder="Enter your name">
@@ -101,16 +101,15 @@
             <label for="address">Your Address</label>
             <input type="text" name="address" required placeholder="Enter your address">
 
-            <label for="phishing_type">Type of Phishing</label>
-            <select name="phishing_type" required>
-                <option value="Email Phishing">Email Phishing</option>
-                <option value="SMS Phishing">SMS Phishing</option>
-                <option value="Phone Phishing">Phone Phishing</option>
-                <option value="Website Phishing">Website Phishing</option>
+            <label for="scam_type">Type of Scam</label>
+            <select name="scam_type" required>
+                <option value="Fake Job Offer">Fake Job Offer</option>
+                <option value="Fake Product">Fake Product</option>
+                <option value="Impersonation">Impersonation</option>
             </select>
 
             <label for="incident">Describe the Incident</label>
-            <textarea name="incident" required placeholder="Provide details of the phishing attempt..."></textarea>
+            <textarea name="incident" required placeholder="Provide details of the scam..."></textarea>
 
             <button type="submit">Submit Report</button>
         </form>

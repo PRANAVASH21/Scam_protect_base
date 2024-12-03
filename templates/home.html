@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home | Scam Protect</title>
+    <style>
+        /* Resetting default browser styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body styling */
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(to right, #6a11cb, #2575fc); /* Gradient background */
+            color: #fff;
+            height: 100vh;
+            overflow-y: scroll; /* Enable vertical scrolling */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            text-align: center;
+            padding-bottom: 20px; /* Ensure space at the bottom for scroll */
+        }
+
+        header {
+            font-size: 3em;
+            font-weight: bold;
+            color: #fff;
+            margin-top: 40px;
+            margin-bottom: 40px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        /* Horizontal container for the options */
+        .container {
+            display: flex;
+            justify-content: center;
+            gap: 30px; /* Gap between the option boxes */
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        .option-box {
+            background: #fff;
+            color: #333;
+            border-radius: 12px;
+            width: 250px;
+            height: 250px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            position: relative;
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+
+        .option-box:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+        }
+
+        .option-box a {
+            font-size: 1.5em;
+            font-weight: bold;
+            text-decoration: none;
+            color: #333;
+            text-transform: uppercase;
+            padding: 15px;
+            background-color: transparent;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .option-box a:hover {
+            background-color: #333;
+            color: #fff;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            transform: translateY(-5px);
+        }
+
+        /* Admin login button */
+        .admin-login {
+            position: absolute;
+            top: 30px;
+            right: 30px;
+            background-color: #ff5733;
+            color: #fff;
+            padding: 15px 30px;
+            font-size: 1.2em;
+            font-weight: bold;
+            border-radius: 5px;
+            text-decoration: none;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .admin-login:hover {
+            background-color: #c13b1d;
+            transform: translateY(-5px);
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px; /* Width of the scrollbar */
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1; /* Light gray background for track */
+            border-radius: 10px;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #888; /* Darker thumb color */
+            border-radius: 10px;
+            transition: background 0.3s ease;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #555; /* Darken thumb color on hover */
+        }
+
+        /* Responsive Design: Stack options vertically on smaller screens */
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .option-box {
+                width: 80%;
+                height: 200px;
+            }
+
+            header {
+                font-size: 2.5em;
+            }
+
+            .admin-login {
+                font-size: 1em;
+                padding: 10px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        Scam Protect
+    </header>
+
+    <div class="container">
+        <div class="option-box" style="background-color: #dc3545;">
+            <a href="{{ url_for('scam') }}">SCAM</a>
+        </div>
+
+        <div class="option-box" style="background-color: #ffc107;">
+            <a href="{{ url_for('phishing') }}">PHISHING</a>
+        </div>
+
+        <div class="option-box" style="background-color: #17a2b8;">
+            <a href="{{ url_for('extortion') }}">EXTORTION</a>
+        </div>
+
+        <div class="option-box" style="background-color: #6c757d;">
+            <a href="{{ url_for('others') }}">OTHERS</a>
+        </div>
+    </div>
+
+    <a href="{{ url_for('admin_login') }}" class="admin-login">Admin Login</a>
+
+</body>
+</html>

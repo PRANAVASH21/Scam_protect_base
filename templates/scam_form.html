@@ -3,36 +3,121 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SCAM Report</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Report Scam | Scam Protect</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(to right, #6a11cb, #2575fc);
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            padding: 20px;
+        }
+
+        .form-container {
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 30px;
+            border-radius: 10px;
+            width: 80%;
+            max-width: 600px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 2em;
+            color: #fff;
+        }
+
+        label {
+            font-size: 1.1em;
+            margin-bottom: 5px;
+            display: block;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            font-size: 1em;
+            color: #333;
+            background-color: #f9f9f9;
+        }
+
+        textarea {
+            height: 150px;
+            resize: none;
+        }
+
+        button {
+            width: 100%;
+            padding: 15px;
+            font-size: 1.2em;
+            background-color: #28a745;
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #218838;
+        }
+
+        .back-button {
+            display: block;
+            text-align: center;
+            margin-top: 20px;
+            font-size: 1em;
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .back-button:hover {
+            text-decoration: underline;
+        }
+    </style>
 </head>
 <body>
+
     <div class="form-container">
-        <h2>Report SCAM</h2>
+        <h1>Report Scam</h1>
         <form method="POST">
             <label for="name">Your Name</label>
-            <input type="text" id="name" name="name" required>
+            <input type="text" name="name" required placeholder="Enter your name">
 
             <label for="address">Your Address</label>
-            <input type="text" id="address" name="address" required>
+            <input type="text" name="address" required placeholder="Enter your address">
 
-            <label for="scammer-number">Scammer's Number</label>
-            <input type="text" id="scammer-number" name="scammer_number" placeholder="Enter scammer's phone number" required>
-
-            <label for="scam-type">Type of Scam</label>
-            <select id="scam-type" name="scam_type" required>
-                <option value="">Select a Scam Type</option>
-                <option value="phishing">Phishing</option>
-                <option value="lottery">Lottery Scam</option>
-                <option value="investment">Investment Scam</option>
-                <option value="loan">Loan Scam</option>
+            <label for="scam_type">Type of Scam</label>
+            <select name="scam_type" required>
+                <option value="Investment Scam">Investment Scam</option>
+                <option value="Lottery Scam">Lottery Scam</option>
+                <option value="Online Dating Scam">Online Dating Scam</option>
+                <option value="Tech Support Scam">Tech Support Scam</option>
+                <option value="Other">Other</option>
             </select>
 
             <label for="incident">Describe the Incident</label>
-            <textarea id="incident" name="incident" rows="4" required></textarea>
+            <textarea name="incident" required placeholder="Provide details of the scam..."></textarea>
 
             <button type="submit">Submit Report</button>
         </form>
+
+        <a href="{{ url_for('home') }}" class="back-button">Back to Home</a>
     </div>
+
 </body>
 </html>
