@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SCAM PROTECT</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <div class="container">
+            <h1>Welcome to SCAM PROTECT</h1>
+            <p>Your safety is our priority. Report scams, phishing, extortion, and more!</p>
+        </div>
+    </header>
+
+    <!-- Main Content Section -->
+    <div class="container">
+        <div class="option-container">
+            <div class="option-box" style="background-color: #ff6f61;">
+                <a href="{{ url_for('scam_form') }}">
+                    <h2>SCAM</h2>
+                    <p>Report scam incidents</p>
+                </a>
+            </div>
+            <div class="option-box" style="background-color: #4caf50;">
+                <a href="{{ url_for('phishing_form') }}">
+                    <h2>PHISHING</h2>
+                    <p>Report phishing attempts</p>
+                </a>
+            </div>
+            <div class="option-box" style="background-color: #fbbc04;">
+                <a href="{{ url_for('extortion_form') }}">
+                    <h2>EXTORTION</h2>
+                    <p>Report extortion threats</p>
+                </a>
+            </div>
+            <div class="option-box" style="background-color: #2196f3;">
+                <a href="{{ url_for('other_form') }}">
+                    <h2>OTHER</h2>
+                    <p>Report other incidents</p>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 SCAM PROTECT. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
